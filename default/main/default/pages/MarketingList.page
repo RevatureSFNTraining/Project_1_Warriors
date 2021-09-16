@@ -1,22 +1,23 @@
-<apex:page Controller="MarketingListController" docType="html-5.0">   
+<apex:page Controller="MarketingListController" lightningStylesheets="true" docType="html-5.0">   
     <apex:slds />
+    <div class="slds-scope">
     <apex:form >
-    	<apex:pageBlock title="Available Properties">        
-            <apex:pageBlockTable value="{!PropertyList}" var="prop" id="prop_list">
-                <apex:column value="{!prop.Address__c}"/>
-                <apex:column >
+        <apex:pageBlock title="Available Properties" id="prop_list">        
+            <apex:pageBlockTable value="{!PropertyList}" var="prop" id="prop_table">
+                <apex:column headerValue="Street Address" value="{!prop.Address__c}"/>
+                <apex:column value="{!prop.Zip_Code__c}"/>
+                <apex:column width="50%">
                     <apex:image url="{!prop.Picture__c}" height="50%" width="50%"></apex:image>
                 </apex:column>
-                <apex:column value="{!prop.Desired_Rent__c}"/>
-                <apex:column title="Bedrooms: " value="{!prop.Bedrooms__c}"/>
-                <apex:column title="Bathrooms: " value="{!prop.Bathrooms__c}"/>
+                <apex:column headerValue="Rent" value="{!prop.Desired_Rent__c}"/>
+                <apex:column value="{!prop.Bedrooms__c}"/>
+                <apex:column value="{!prop.Bathrooms__c}"/>
             </apex:pageBlockTable>
-            <apex:pageblockButtons >
-                <apex:commandButton value="First Page" reRender="prop_list" action="{!FirstPage}" disabled="{!prev}"/>
-                <apex:commandButton value="Previous" rerender="prop_list" action="{!previous}" disabled="{!prev}"/>
-                <apex:commandButton value="Next" rerender="prop_list" action="{!next}" disabled="{!nxt}"/>
-                <apex:commandButton value="Last Page" rerender="_list" action="{!LastPage}" disabled="{!nxt}"/>
-            </apex:pageblockButtons>
+            <apex:panelGrid columns="2">
+                <apex:commandButton action="{!previous}" value="PREVIOUS" reRender="prop_list" disabled="{!disabledPrev}" styleClass="slds-button slds-button--brand slds-not-selected"></apex:commandButton>
+                <apex:commandButton action="{!next}" value="NEXT" reRender="prop_list" disabled="{!disabledNext}" styleClass="slds-button slds-button--brand slds-not-selected"></apex:commandButton>
+            </apex:panelGrid>
         </apex:pageBlock>
     </apex:form>
+    </div>
 </apex:page>

@@ -10,8 +10,8 @@
   }, {
     "components" : [ {
       "componentAttributes" : {
-        "height" : "1200",
-        "pageName" : "AccountsContacts",
+        "height" : "1000",
+        "pageName" : "MarketingList",
         "recordId" : "{!recordId}"
       },
       "componentName" : "forceCommunity:visualforcePage",
