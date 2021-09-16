@@ -1,12 +1,18 @@
-<apex:page controller="Maintenance_Request__c" tabstyle="Maintenance_Requests" sidebar="false">
-  <apex:pageBlock title="Maintenance Request Details">
+<apex:page docType="html-5.0" controller="MaintenanceRequestController" sidebar="false">
     <apex:form >
-      <apex:pageBlockTable value="Maintenance_Requests" var="mrs" id="list">
-        <apex:column value="{!mrs.Name}"/>
-        <apex:column value="{!mrs.Estimated_Cost__c}"/>
+      <apex:pageBlock title="Maintenance Request Details">
+      <apex:pageBlockTable value="{!mRList}" var="mrs" id="list">
+		<apex:column value="{!mrs.name}"/>
         <apex:column value="{!mrs.Maintenance_Type__c}"/>
-        <apex:column value="{!mrs.Preferred_Date_of_Service__c}"/>
+        <apex:column value="{!Preferred_Date_of_Service__c}"/> 
       </apex:pageBlockTable>
+        </apex:pageBlock>
+      <apex:pageBlock title= "Search Criteria">
+      <apex:pageBlockSection>
+         <apex:input label="Start Date:" value="{!PrefDateStart}" type="date"/>
+          <apex:input label="End Date:" value="{!PrefDateEnd}" type="date"/>
+      </apex:pageBlockSection>
+      <apex:commandButton value="Search by Date Range" action="{!SearchByDateRange}" />
+      </apex:pageBlock>
     </apex:form>
-  </apex:pageBlock>
 </apex:page>
