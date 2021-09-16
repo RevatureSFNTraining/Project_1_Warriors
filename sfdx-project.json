@@ -1,11 +1,11 @@
 {
   "packageDirectories": [
     {
-      "path": "force-app",
+      "path": "default",
       "default": true
     }
   ],
-  "name": "P1PropMgmt",
+  "name": "Project_1_Warriors",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "52.0"

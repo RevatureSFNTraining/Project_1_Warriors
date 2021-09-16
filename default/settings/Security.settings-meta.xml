@@ -53,7 +53,7 @@
         <redirectionWarning>true</redirectionWarning>
         <referrerPolicy>true</referrerPolicy>
         <requireHttpOnly>false</requireHttpOnly>
-        <sessionTimeout>TwoHours</sessionTimeout>
+        <sessionTimeout>TwentyFourHours</sessionTimeout>
         <useLocalStorageForLogoutUrl>false</useLocalStorageForLogoutUrl>
     </sessionSettings>
     <singleSignOnSettings>

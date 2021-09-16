@@ -1,0 +1,14 @@
+<apex:page standardController="Property__c" recordSetVar="Properties" tabstyle="contact" sidebar="false">   
+    <apex:pageBlock title="Available Properties">
+        <apex:form >
+            <apex:pageBlockTable value="{!Properties}" var="prop" id="list">
+                <apex:column value="{!prop.Name}"/>
+                <apex:column >
+                    <apex:image url="{!prop.Picture__c}" height="200" width="200"></apex:image>
+                </apex:column>
+                <!-- <apex:column value="{!con.email}"/>
+                <apex:column value="{!con.accountId}"/>-->
+            </apex:pageBlockTable>
+        </apex:form>
+    </apex:pageBlock>    
+</apex:page>
