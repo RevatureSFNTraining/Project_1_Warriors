@@ -1,15 +1,22 @@
-<apex:page standardController="Property__c" recordSetVar="Properties" tabstyle="contact" sidebar="false">   
-    <apex:pageBlock title="Available Properties">
-        <apex:form >
-            <apex:pageBlockTable value="{!Properties}" var="prop" id="list">
+<apex:page Controller="MarketingListController" docType="html-5.0">   
+    <apex:slds />
+    <apex:form >
+    	<apex:pageBlock title="Available Properties">        
+            <apex:pageBlockTable value="{!PropertyList}" var="prop" id="prop_list">
                 <apex:column value="{!prop.Address__c}"/>
                 <apex:column >
-                    <apex:image url="{!prop.Picture__c}"></apex:image>
+                    <apex:image url="{!prop.Picture__c}" height="50%" width="50%"></apex:image>
                 </apex:column>
                 <apex:column value="{!prop.Desired_Rent__c}"/>
                 <apex:column title="Bedrooms: " value="{!prop.Bedrooms__c}"/>
                 <apex:column title="Bathrooms: " value="{!prop.Bathrooms__c}"/>
             </apex:pageBlockTable>
-        </apex:form>
-    </apex:pageBlock>    
+            <apex:pageblockButtons >
+                <apex:commandButton value="First Page" reRender="prop_list" action="{!FirstPage}" disabled="{!prev}"/>
+                <apex:commandButton value="Previous" rerender="prop_list" action="{!previous}" disabled="{!prev}"/>
+                <apex:commandButton value="Next" rerender="prop_list" action="{!next}" disabled="{!nxt}"/>
+                <apex:commandButton value="Last Page" rerender="_list" action="{!LastPage}" disabled="{!nxt}"/>
+            </apex:pageblockButtons>
+        </apex:pageBlock>
+    </apex:form>
 </apex:page>
