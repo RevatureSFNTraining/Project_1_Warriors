@@ -3,11 +3,10 @@
     <fullName>Apartment_Number__c</fullName>
     <externalId>false</externalId>
     <label>Apartment Number</label>
-    <precision>5</precision>
+    <length>100</length>
     <required>false</required>
-    <scale>0</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Number</type>
+    <type>Text</type>
     <unique>false</unique>
 </CustomField>

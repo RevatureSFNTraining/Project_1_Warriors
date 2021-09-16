@@ -2,12 +2,13 @@
     <apex:pageBlock title="Available Properties">
         <apex:form >
             <apex:pageBlockTable value="{!Properties}" var="prop" id="list">
-                <apex:column value="{!prop.Name}"/>
+                <apex:column value="{!prop.Address__c}"/>
                 <apex:column >
-                    <apex:image url="{!prop.Picture__c}" height="200" width="200"></apex:image>
+                    <apex:image url="{!prop.Picture__c}"></apex:image>
                 </apex:column>
-                <!-- <apex:column value="{!con.email}"/>
-                <apex:column value="{!con.accountId}"/>-->
+                <apex:column value="{!prop.Desired_Rent__c}"/>
+                <apex:column title="Bedrooms: " value="{!prop.Bedrooms__c}"/>
+                <apex:column title="Bathrooms: " value="{!prop.Bathrooms__c}"/>
             </apex:pageBlockTable>
         </apex:form>
     </apex:pageBlock>    
