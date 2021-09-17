@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "default",
+      "default": true
+    }
+  ],
+  "name": "Project_1_Warriors",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "52.0"
+}
