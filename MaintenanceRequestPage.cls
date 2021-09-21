@@ -1,30 +1,61 @@
-<apex:page docType="html-5.0" controller="MNMaintenanceRequestController" sidebar="false">
+<apex:page docType="html-5.0" controller="MNMaintenanceRequestController" standardStylesheets="false">
+    <apex:stylesheet value="{! $Resource.MNCSS }"/>
     <apex:form >
-      <apex:pageBlock title="Maintenance Request Details">
-      <apex:pageBlockTable value="{!mRList}" var="mrs" id="list">
-		<apex:column value="{!mrs.name}"/>
+      <div class="section1">
+      <div class="sectionTitle">
+        <h1> 
+            Maintenance Request Details
+        </h1>   
+      </div>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Maintenance Type</th>          
+          <th>Preferred Date of Service</th>  
+          <th>Job Scheduled</th>
+          <th>Related Vendor Quotes</th>
+        </tr>
+        <apex:dataTable value="{!mRList}" var="mrs">
+            <tr>
+        <apex:column value="{!mrs.Name}"/>
         <apex:column value="{!mrs.Maintenance_Type__c}"/>
         <apex:column value="{!mrs.Preferred_Date_of_Service__c}"/>
         <apex:column value="{!mrs.Job_Scheduled__c}"/>
-        <apex:column headerValue="Related Vendor Quotes">
-        	<apex:dataList value="{!mrs.Vendor_Quotes__r}" var="vq">
-        		<apex:outputField value="{!vq.Name}" />
-                <apex:outputField value="{!vq.Hourly_Rate__c}" />
-            </apex:dataList>
-        </apex:column> 
-      </apex:pageBlockTable>
-        </apex:pageBlock>
-      <apex:pageBlock title="Search Maintenance Requests">
-      <apex:commandButton value="Reset Search" action="{!ResetSearch}"/>
-      <apex:pageBlockSection title="Preferred Date of Service Range">
-         <apex:input label="Start Date:" value="{!PrefDateStart}" type="date"/>
-          <apex:input label="End Date:" value="{!PrefDateEnd}" type="date"/>
-      <apex:commandButton value="Search by Date Range" action="{!SearchByDateRange}" />
-      </apex:pageBlockSection>
-      <apex:pageBlockSection title="Jobs Scheduled/NotScheduled" >
-      <apex:commandButton value="Search by Jobs Not Scheduled" action="{!SearchByJobsNotScheduled}" />
-      <apex:commandButton value="Search by Jobs Scheduled" action="{!SearchByJobsScheduled}" />
-      </apex:pageBlockSection>
-      </apex:pageBlock>
+        <apex:column >
+        <apex:dataList value="{!mrs.Vendor_Quotes__r}" var="vq">
+            <apex:outputField value="{!vq.Name}" />
+            <apex:outputField value="{!vq.Hourly_Rate__c}" />
+        </apex:dataList>
+        </apex:column>
+            </tr> 
+          
+        </apex:dataTable>
+      </table>
+      </div>
+      <div class="section2">
+      <div class="sectionTitle">
+        <h1> 
+            Search Maintenance Requests
+        </h1>   
+      </div>
+      <div class="subSection1">
+      <h2>
+          Start Date:
+      </h2>
+      <apex:input styleClass="input" value="{!PrefDateStart}" type="date"/>
+      <h2>
+          End Date:
+      </h2>      
+      <apex:input styleClass="input" value="{!PrefDateEnd}" type="date"/> 
+      <apex:commandButton styleClass="button1" value="Search by Date Range" action="{!SearchByDateRange}" />
+      </div>
+      <div class="subSection2">
+      <apex:commandButton styleClass="button2" value="Search by Jobs Not Scheduled" action="{!SearchByJobsNotScheduled}" />
+      <apex:commandButton styleClass="button2" value="Search by Jobs Scheduled" action="{!SearchByJobsScheduled}" />          
+      </div>
+      <div class="subSection3">
+      <apex:commandButton styleClass="button3" value="Reset Search" action="{!ResetSearch}"/>          
+      </div>
+      </div>
     </apex:form>
 </apex:page>
