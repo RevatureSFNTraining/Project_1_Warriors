@@ -8,18 +8,6 @@
     "regionName" : "header",
     "type" : "region"
   }, {
-    "components" : [ {
-      "componentAttributes" : {
-        "height" : "1000",
-        "pageName" : "PaginatedContacts",
-        "recordId" : "{!recordId}"
-      },
-      "componentName" : "forceCommunity:visualforcePage",
-      "id" : "cf8ceb0b-2f9e-405c-82cc-e4538f68f74f",
-      "renderPriority" : "NEUTRAL",
-      "renditionMap" : { },
-      "type" : "component"
-    } ],
     "id" : "c5ef2c2a-5702-4220-888d-4fae3eb221b6",
     "regionName" : "content",
     "type" : "region"

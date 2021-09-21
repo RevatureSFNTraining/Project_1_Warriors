@@ -10,8 +10,8 @@
   }, {
     "components" : [ {
       "componentAttributes" : {
-        "height" : "1000",
-        "pageName" : "MarketingList",
+        "height" : "1500",
+        "pageName" : "LHMarketingListAlt",
         "recordId" : "{!recordId}"
       },
       "componentName" : "forceCommunity:visualforcePage",
