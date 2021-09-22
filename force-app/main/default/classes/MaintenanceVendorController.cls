@@ -1,44 +1,23 @@
 public class MaintenanceVendorController {
-	private String sortOrder = 'FirstName';
     private String sortOrder2 = 'Name';
-    private String level = 'Primary';
     private String specialty = 'Plumbing';
-    
-    
- /*   Public List<Contact> getContacts(){
-        List<Contact> results = Database.query(
-        'SELECT Id, FirstName, LastName, Title, Email, Level__c ' +
-        'FROM Contact ' +
-        'WHERE Level__c = :level ' +
-        'ORDER BY ' + sortOrder + ' ASC ' +
-		'LIMIT 8'
-        );
-        return results;
-    }*/
-    
-    
+    public String getsortOrder2(){
+        return sortOrder2;
+    }
+    public String getspecialty(){
+        return specialty;
+    }
+ 
     Public List<Vendor__c> getVendors(){
         List<Vendor__c> results = Database.query(
-		'SELECT Id, Name, Branch__c, Email__c, Primary_phone__c, Specialty__c ' +
+        'SELECT Id, Name, Branch__c, Email__c, Primary_phone__c, Specialty__c ' +
         'FROM Vendor__c '+
-		'WHERE specialty__c = :specialty ' +
-		'ORDER BY ' + sortOrder2 + ' ASC ' +
+        'WHERE specialty__c = :specialty ' +
+        'ORDER BY ' + sortOrder2 + ' ASC ' +
         'LIMIT 8'
         );
         return results;
     }
-    
-    public void sortByLastName(){
-        this.sortOrder = 'LastName';
-    }
-    
-    public void sortByFirstName(){
-        this.sortOrder = 'FirstName';
-    }
-    
-    
-    
-    
     
     public void sortByName(){
         this.sortOrder2 = 'Name';
@@ -50,15 +29,6 @@ public class MaintenanceVendorController {
     
     //This will be for each Specialty
     
-    public void viewPrimary(){
-        this.level = 'Primary';
-    }
-    
-    public void viewSecondary(){
-        this.level = 'Secondary';
-    }
-    
- 
     public void viewCleaning(){
         this.specialty = 'Cleaning';
     }

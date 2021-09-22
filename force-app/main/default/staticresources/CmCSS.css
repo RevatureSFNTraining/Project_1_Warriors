@@ -6,11 +6,23 @@ body {
 }
 
 /* For <h1> ----------------------------*/
+/*
 .h1Title {
-    color : red;
+    color : #345B63;
     text-align: center;
     font-size: 1.5em;
 }
+*/
+.h1Title {
+    background-color: #22577A;
+	text-align: center;
+    border: medium solid #80ED99;
+    margin: 3% 25% 3% 25%;
+    width: 50%;
+    color: white;
+}
+
+
 .sectionTitle {
     padding: top;
     display: block;
@@ -32,10 +44,11 @@ body {
 
 /* For Layout ----------------------------*/
 .section {
-    /*background-color: #FFEDED;*/
-    background-color: #FDD2BF;
+    /* FFEDED 38A3A5 FDD2BF */
+    background-color: #38A3A5;
     margin: 70px;
     padding: 40px; 
+    border: medium solid #80ED99;
 }
 .infoContainer {
     display: flex;
