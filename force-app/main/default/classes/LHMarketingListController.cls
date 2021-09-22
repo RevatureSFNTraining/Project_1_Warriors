@@ -1,6 +1,6 @@
 public class LHMarketingListController {
     public integer totalRecs{get; set;}
-    private integer OffsetSize=0;
+    public integer OffsetSize=0;
     public integer LimitSize{get; set;} {LimitSize = 1;}
     public decimal numberBathrooms{get; set;} //{numberBathrooms = 10;}
     public integer numberBedrooms{get; set;} //{numberBedrooms = 10;}

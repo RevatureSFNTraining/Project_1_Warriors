@@ -1,6 +1,6 @@
-<apex:page docType="html-5.0" controller="MNMaintenanceRequestController" standardStylesheets="false">
+<apex:page docType="html-5.0" controller="MNMaintenanceRequestController" showHeader="false" standardStylesheets="false">
     <apex:stylesheet value="{! $Resource.MNCSS }"/>
-    <apex:form >
+    <apex:form styleClass="formClass">
       <div class="section1">
       <div class="sectionTitle">
         <h1> 
@@ -39,14 +39,14 @@
         </h1>   
       </div>
       <div class="subSection1">
-      <h2>
+      <h2 class="subHeading1">
           Start Date:
       </h2>
-      <apex:input styleClass="input" value="{!PrefDateStart}" type="date"/>
-      <h2>
+      <apex:input styleClass="input1" value="{!PrefDateStart}" type="date"/>
+      <h2 class="subHeading2">
           End Date:
       </h2>      
-      <apex:input styleClass="input" value="{!PrefDateEnd}" type="date"/> 
+      <apex:input styleClass="input2" value="{!PrefDateEnd}" type="date"/> 
       <apex:commandButton styleClass="button1" value="Search by Date Range" action="{!SearchByDateRange}" />
       </div>
       <div class="subSection2">

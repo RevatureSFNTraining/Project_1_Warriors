@@ -1,8 +1,8 @@
 public without sharing class PropertyOwnerExtension {
-    public Account acct {get;set;}
-    // public String accName {get;set;}
-    public PropertyOwnerExtension(ApexPages.StandardController stdController) {
-        this.acct = (Account)stdController.getRecord();
+    // public Account acct {get;set;}
+    public String accName {get;set;}
+    public PropertyOwnerExtension(ApexPages.StandardSetController stdCtrl) {
+        // this.acct = (Account)stdController.getRecord();
     }
     
     public List<contact> getContacts() {

@@ -56,10 +56,12 @@
                 <div id="pagetitle">
                     <h1>Filter</h1>                
                 </div>
+                <div id="Contactinfotable">
+                    
                 <!-- Filter options-->
                 <table>
                     <tr class="separator"/>  
-                    <tr>
+                    <tr class="border">
                       <td>Min Bedrooms: </td> 
                       <td>
                           <apex:selectList size="1" styleClass="FilterInput" value="{!numberBedrooms}">
@@ -72,7 +74,7 @@
                       </td>
                   </tr>
                   <tr class="separator"/>
-                  <tr>
+                  <tr class="border">
                       <td>Min Bathrooms: </td>
                       <td>
                           <apex:selectList styleClass="FilterInput" size="1" label="Choose a minimum number of bathrooms" value="{!numberBathrooms}">
@@ -85,15 +87,16 @@
                       </td>
                   </tr>
                   <tr class="separator"/>
-                  <tr>
+                  <tr class="border">
                       <td>Max Rent:</td> 
                       <td><apex:inputText styleClass="FilterInput" value="{!rentFilter}" maxlength="5"/></td>
                   </tr>
                   <tr class="separator"/>
                   <tr class="separator"/>
                 </table>
+                </div>
                 <div  class="slds-align_absolute-center">
-                    <apex:commandButton styleclass="slds-button slds-button--brand slds-not-selected" value="Filter Results" reRender="prop_list" />
+                    <apex:commandButton styleclass="slds-button slds-button--brand slds-not-selected" value="Filter Results" reRender="prop_list, contact_info" />
                 </div>
             </apex:pageBlock>
             <apex:pageBlock id="contact_info">
@@ -104,22 +107,22 @@
                     <apex:repeat value="{!PropertyList}" var="prop">
                         <table>
                             <tr class="separator"/>
-                            <tr>
+                            <tr class="border">
                                 <td>Branch: </td>
                                 <td><apex:outputField value="{!prop.Property_Manager__r.Branch__r.name}"/></td>
                             </tr>
-                            <tr class="separator"/>
-                            <tr>
+                            <tr class="endsep"/>
+                            <tr class="border">
                                 <td>Property Manager: </td>
                                 <td><apex:outputField value="{!prop.Property_Manager__r.Name}"/></td>
                             </tr> 
-                            <tr class="separator"/>
-                            <tr>
+                            <tr class="endsep"/>
+                            <tr class="border">
                                 <td>Email: </td>
                                 <td><apex:outputField value="{!prop.Property_Manager__r.Email__c}"/></td>
                             </tr>
-                            <tr class="separator"/>
-                            <tr>
+                            <tr class="endsep"/>
+                            <tr class="border">
                                 <td>Phone: </td>
                                 <td><apex:outputField value="{!prop.Property_Manager__r.Phone__c}"/></td>
                             </tr>
