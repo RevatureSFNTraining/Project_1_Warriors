@@ -1,0 +1,40 @@
+@isTest
+public class MNMaintenanceRequestControllerTest {
+	@isTest
+    static void posCheckDateRangeSearch() {
+        MNMaintenanceRequestController mRController = new MNMaintenanceRequestController();
+        Maintenance_Request__c mR = new Maintenance_Request__c(Name='123 Example', Preferred_Date_of_Service__c=Date.newInstance(2021, 9, 15));
+        Test.startTest();
+        mRController.SearchByDateRange();
+        Test.stopTest();
+        System.assertEquals(1, mRController.mRList.size());
+	}
+    @isTest
+    static void posCheckJobsScheduledSearch() {
+        MNMaintenanceRequestController mRController = new MNMaintenanceRequestController();
+        Maintenance_Request__c mR = new Maintenance_Request__c(Name='123 Example', Job_Scheduled__c=true);
+        Test.startTest();
+        mRController.SearchByJobsNotScheduled();
+        Test.stopTest();
+        System.assertEquals(1, mRController.mRList.size());        
+	}
+    @isTest
+    static void posCheckJobsNotScheduledSearch() {
+        MNMaintenanceRequestController mRController = new MNMaintenanceRequestController();
+        Maintenance_Request__c mR = new Maintenance_Request__c(Name='123 Example', Job_Scheduled__c=false);
+        Test.startTest();
+        mRController.SearchByJobsScheduled();
+        Test.stopTest();
+        System.assertEquals(1, mRController.mRList.size());        
+	}
+    @isTest
+    static void posCheckResetSearch() {
+        MNMaintenanceRequestController mRController = new MNMaintenanceRequestController();
+        Maintenance_Request__c mR = new Maintenance_Request__c(Name='123 Example', Preferred_Date_of_Service__c=Date.newInstance(2021, 9, 15));
+        Test.startTest();
+        mRController.SearchByDateRange();
+        mRController.ResetSearch();
+        Test.stopTest();
+        System.assertEquals(1, mRController.mRList.size());        
+	}
+}
