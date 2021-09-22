@@ -1,0 +1,42 @@
+body {
+	background-color: #F3F0D7; 
+}
+.section1, .section2 {
+    background-color: #E0C097;
+    height: 50%;
+    width: 88%;
+    padding: 3% 3% 3% 3%;
+    margin: 3% 3% 3% 3%;
+}
+.sectionTitle {
+    background-color: #5C3D2E;
+	text-align: center;
+    border: medium dotted #2D2424;
+    margin: 3% 25% 3% 25%;
+    width: 50%;
+}
+h1 {
+    color: #E0C097;
+    font-size: 3em;
+}
+table, h1 {
+    width: 100%; 
+}
+th {
+    font-size: 100%;
+
+}
+tr, th, td {
+    text-align: center;
+    color: #2D2424;
+    width: 20%;	
+}
+table, th, tr, td, .subSection1, .subSection2, .subSection3, h2, .input, .button1, .button2, .button3 {
+    background-color: #B85C38;
+    border: medium solid #2D2424;    
+}
+h2, .subSection1, .subSection2, .subSection3{    
+    margin: 3% 17.6% 3% 17.6%;
+    padding: 1%;
+}
+

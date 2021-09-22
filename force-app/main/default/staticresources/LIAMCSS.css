@@ -1,0 +1,72 @@
+.slds-list_horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    float: center;
+    padding: 20px 0;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+h1 {
+    font-size: 50px;
+    text-align:center;
+}
+
+#pagetitle {
+    margin-left: auto;
+	margin-right: auto;
+    float:center;
+    white-space: nowrap;
+    font-size: 2em;
+}
+
+#prop_image {
+    margin-left: auto;
+    margin-right: auto;
+    float: center;
+    text-align: center;
+}
+
+#prop_name {
+    margin-left: auto;
+	margin-right: auto;
+    margin-bottom: 10px;
+    text-align:center;
+    white-space: nowrap;
+    font-size: 1.5em;
+}
+
+.FilterInput {
+    width: 80%;
+	height: 30px;
+}
+
+table tr.separator {
+    height: 15px;
+}
+
+table tr.endsep {
+    height: 150px;
+}
+
+table tr {
+    height: 25px;
+    font-size: 1.5em;
+}
+
+.filterbutton {
+    float:center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul li {
+    font-size: 1.25em;
+}
+
+.slds-align_absolute-center {
+    font-size: 1.25em;
+}

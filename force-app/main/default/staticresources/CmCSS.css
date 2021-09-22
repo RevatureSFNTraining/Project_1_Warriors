@@ -1,0 +1,54 @@
+/* ------------------ Canbin's CSS ------------------ */
+
+/* Background color of the page */
+body {
+    background-color: white;
+}
+
+/* For <h1> ----------------------------*/
+.h1Title {
+    color : red;
+    text-align: center;
+    font-size: 1.5em;
+}
+.sectionTitle {
+    padding: top;
+    display: block;
+}
+/* ------------- */
+
+
+/* For <div> ----------------------------*/
+.centerDiv {
+    text-align: center;
+}
+/* ------------- */
+
+/* For <p> ----------------------------*/
+.centerP {
+    text-align: center;
+}
+/* ------------- */
+
+/* For Layout ----------------------------*/
+.section {
+    /*background-color: #FFEDED;*/
+    background-color: #FDD2BF;
+    margin: 70px;
+    padding: 40px; 
+}
+.infoContainer {
+    display: flex;
+    justify-content: space-around;
+    
+    padding: 40px 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.infoColumn {
+    display: inline-block;
+    width: 300px;
+}
+/* ------------- */
+
+/* ------------------ Canbin's CSS ------------------ */
