@@ -1,7 +1,0 @@
-There is a new approved maintenance request at {!Maintenance_Request__c.Property__c}.
-
-Type: {!Maintenance_Request__c.Maintenance_Type__c}
-Target Date: {!Maintenance_Request__c.Preferred_Date_of_Service__c}
-Description: {!Maintenance_Request__c.Description__c}
-
-If you would like to be considered for this job, please email us a quote including hours, hourly rate, and a date of service.
