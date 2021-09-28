@@ -1,0 +1,39 @@
+<apex:page sidebar="false" tabStyle="Contact" controller="PropertyOwnerContactsController">
+    
+    <!-- Page Block 3 - Property Owner Contacts -->
+    <apex:sectionHeader title="Hi, {!$User.FirstName}" subtitle="Properly Property Owner Search"/>
+    <apex:form >
+        <apex:pageblock title="Search Property Owner Contacts">
+            <apex:outputText value="Enter Property Owner Name: "></apex:outputText>
+            <apex:inputtext value="{!accName}" />
+            <apex:commandButton value="Show Contacts" action="{!showContacts}" rerender="out" status="mystatus"/>
+            <br/>
+            <apex:actionstatus id="mystatus" starttext="please wait while contacts are loading...">
+                <apex:facet name="stop">
+                    <apex:outputpanel id="out">
+                        <apex:pageBlock >
+                            <apex:pageBlockSection title="Contact details">
+                                <apex:pageBlockTable value="{!Contacts}" var="c" rendered="{!accName !=null}">
+                                    <apex:column >
+                                        <apex:outputField value="{!c.Name}" /> 
+                                        <apex:facet name="header">Name</apex:facet>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:outputField value="{!c.Phone}" /> 
+                                        <apex:facet name="header">Phone</apex:facet>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:outputField value="{!c.Email}" /> 
+                                        <apex:facet name="header">Email</apex:facet>
+                                    </apex:column>
+                                    <apex:inlineEditSupport event="ondblClick" 
+                                                            showOnEdit="saveButton,cancelButton" hideOnEdit="editButton" />
+                                </apex:pageBlockTable>
+                            </apex:pageBlockSection>
+                        </apex:pageBlock>
+                    </apex:outputpanel>
+                </apex:facet>
+            </apex:actionstatus>
+        </apex:pageblock>      
+    </apex:form>
+</apex:page>

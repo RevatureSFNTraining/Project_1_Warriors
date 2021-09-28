@@ -1,0 +1,115 @@
+<apex:page standardController="Account" recordSetVar="accounts" showHeader="false" extensions="PropertyOwnerExtension">
+    <style type="text/css">
+        body {
+            background-color: #38A3A5;
+        }
+    </style>
+    <apex:sectionHeader title="Hi, {!$User.FirstName}" subtitle="Property Owners"/>
+    
+    <!-- Page Block 2 - Create Property Owner -->
+    <apex:form >
+        <apex:pageblock title="Create Property Owner">
+            <apex:pageblockSection title="Property Owner Information" collapsible="false">
+                <apex:inputField value="{!Account.Name}" />
+                <apex:inputField value="{!Account.Type}" />
+                <apex:inputField value="{!Account.Rating}" />
+                <apex:inputField value="{!Account.SLAExpirationDate__c}" />
+            </apex:pageblockSection>
+            <apex:pageblockSection title="Property Owner Contact Information" collapsible="false">
+                <apex:inputField value="{!Account.Phone}" />
+                <apex:inputField value="{!Account.Website}" />
+                <apex:inputField value="{!Account.NumberofLocations__c}" />
+            </apex:pageblockSection>
+            <apex:pageblockButtons location="bottom">
+                <apex:commandButton value="Save" title="Click to Save" action="{!save}"/>           
+                <apex:commandButton value="Cancel" title="Click to cancel" action="{!cancel}"/>
+            </apex:pageblockButtons>
+        </apex:pageblock>
+    </apex:form>
+    
+    <!--Page Block 4 - List Property Owners -->
+    <apex:form >
+        <apex:pageblock title="Property Owner List">
+            <apex:pageblockSection >
+                <apex:pageBlockTable value="{!Accounts}" var="Account">
+                    <apex:column >
+                        <apex:outputField value="{!Account.name}" /> 
+                        <apex:facet name="header">Name</apex:facet>
+                    </apex:column>
+                    <apex:column >
+                        <apex:outputField value="{!Account.phone}" /> 
+                        <apex:facet name="header">Phone</apex:facet>
+                    </apex:column>
+                    <apex:column >
+                        <apex:outputField value="{!Account.Email__c}" /> 
+                        <apex:facet name="header">Email</apex:facet>
+                    </apex:column>
+                    <apex:column >
+                        <apex:outputField value="{!Account.website}" /> 
+                        <apex:facet name="header">Website</apex:facet>
+                    </apex:column>
+                    <apex:column >
+                        <apex:outputField value="{!Account.Property_Owner_Type__c}" /> 
+                        <apex:facet name="header">Property Owner Type</apex:facet>
+                    </apex:column>
+                    <apex:column >
+                        <apex:outputField value="{!Account.Referral_Name__c}" /> 
+                        <apex:facet name="header">Referral Name</apex:facet>
+                    </apex:column>
+                    <apex:inlineEditSupport event="ondblClick" 
+                        showOnEdit="saveButton,cancelButton" hideOnEdit="editButton" />
+                </apex:pageBlockTable>
+            </apex:pageblockSection>
+            <apex:panelGrid columns="2">
+                <apex:commandLink action="{!previous}">Previous</apex:commandLink>
+                <apex:commandLink action="{!next}">Next</apex:commandLink>
+            </apex:panelGrid>
+            <apex:pageBlockButtons location="bottom"> 
+                    <apex:commandButton value="Edit" action="{!save}" id="editButton" />
+                    <apex:commandButton value="Save" action="{!save}" id="saveButton" />
+                    <apex:commandButton value="Cancel" action="{!cancel}" id="cancelButton" />
+            </apex:pageBlockButtons> 
+        </apex:pageblock>
+    </apex:form>
+    
+    <!-- Page Block 3 - Property Owner Contact Search -->
+    <apex:sectionHeader title="Search for Property Owner Contacts"/>
+    <!--
+    <apex:form >      
+        <apex:outputText value="Enter Property Owner Name:"></apex:outputText>
+        <apex:inputtext value="{!accName}" />
+        <apex:commandButton value="Show Contacts" action="{!showContacts}" rerender="out" status="mystatus"/>
+        <br/>
+        <apex:actionstatus id="mystatus" starttext="please wait contacts are loading.......">
+            <apex:facet name="stop">
+                <apex:outputpanel id="out">
+                    <apex:pageBlock >
+                        <apex:pageBlockSection title="Contact details">
+                            <apex:pageBlockTable value="{!Contacts}" var="c" rendered="{!accName !=null}">
+                                <apex:column headerValue="Name">
+                                    {!c.Name}
+                                </apex:column>
+                                <apex:column headerValue="Phone">
+                                    {!c.Phone}
+                                </apex:column>
+                                <apex:column headerValue="Email">
+                                    {!c.Email}
+                                </apex:column>
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSection>
+                    </apex:pageBlock>
+                </apex:outputpanel>
+            </apex:facet>
+        </apex:actionstatus>
+    </apex:form>
+    -->
+    <!-- Page Block 1 - Example -->
+    <apex:pageBlock title="Property Owner Contacts">
+        <apex:pageBlockSection title="Properly Property Owner Search">
+            <apex:pageBlockSectionItem >
+                <a href="https://p1propertymanagement-developer-edition.na163.force.com/customers/s">Search for Property Owner contacts</a>
+                <!-- Now viewing {!account.name}'s Contacts! -->
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>
